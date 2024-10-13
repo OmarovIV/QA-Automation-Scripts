@@ -1,0 +1,22 @@
+{
+  "name": "qa-automation-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmarovIV/QA-Automation-Scripts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OmarovIV/QA-Automation-Scripts/issues"
+  },
+  "homepage": "https://github.com/OmarovIV/QA-Automation-Scripts#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.5.5"
+  }
+}
