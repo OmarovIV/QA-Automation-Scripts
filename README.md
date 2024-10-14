@@ -1,11 +1,22 @@
-# QA-Automation-Scripts
+# QA Automation Scripts
 
-This repository contains Playwright automation scripts.
+## Project Overview
 
-## Current Branch
+This repository contains automated test scripts built using Playwright. The tests cover various scenarios for different websites, demonstrating the login flow, product selection, and form interactions.
 
-- Added Playwright test scripts for validating functionality on public websites. Tests focus on login functionality using Playwright.
+## Technologies Used
 
-## Tests Written
+- Playwright
+- TypeScript
+- Node.js
 
-- Login functionality using https://the-internet.herokuapp.com/login
+## Setup Instructions
+
+1. Clone the repository:
+   git clone https://github.com/OmarovIV/QA-Automation-Scripts.git
+
+2. Install dependencies:
+   npm install
+
+3. Run the tests:
+   npx playwright test
