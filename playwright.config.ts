@@ -1,13 +1,15 @@
-import { defineConfig, devices } from "@playwright/test";
+import { devices, PlaywrightTestConfig } from "@playwright/test";
 
-export default defineConfig({
+const config: PlaywrightTestConfig = {
   testDir: "./tests",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: "html",
+  reporter: [["allure-playwright", { outputFolder: "allure-results" }]],
   use: {
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
     trace: "on-first-retry",
   },
   projects: [
@@ -24,4 +26,6 @@ export default defineConfig({
       use: { ...devices["Desktop Safari"] },
     },
   ],
-});
+};
+
+export default config;
