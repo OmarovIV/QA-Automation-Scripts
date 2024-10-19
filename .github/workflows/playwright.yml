@@ -11,28 +11,24 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: "18"
+          node-version: "16"
+
+      - name: Install browser dependencies
+        run:
+          sudo apt-get update && sudo apt-get install -y libwoff1 libvpx-dev libevent-dev libopus0 \
+          libgstreamer1.0-0 libgstreamer-plugins-base1.0-dev \
+          libgstreamer-plugins-good1.0-dev libharfbuzz-dev \
+          libhyphen0 libflite1 libgles2-mesa libx264-155
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install
+        run: npm install
 
       - name: Run Playwright tests
         run: npx playwright test
-
-      - name: Upload test results
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: test-results/
