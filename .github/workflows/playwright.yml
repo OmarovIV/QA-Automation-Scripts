@@ -1,0 +1,36 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Install browser dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y libwoff1 libvpx-dev libevent-dev libopus0 \
+          gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-libav \
+          libharfbuzz0b libflite1 libgles2-mesa libx264-dev libhyphen-dev
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Playwright tests
+        run: npx playwright test
