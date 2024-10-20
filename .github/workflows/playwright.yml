@@ -24,10 +24,10 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y libwoff1 libvpx-dev libevent-dev libopus0 \
           gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-libav \
-          libharfbuzz-dev libflite1 libgles2-mesa libx264-dev libhyphen-dev
+          libharfbuzz0b libflite1 libgles2-mesa libx264-160 libhyphen-dev
 
-      - name: Check for Installed Packages
-        run: dpkg -l | grep gstreamer
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
 
       - name: Install dependencies
         run: npm install
