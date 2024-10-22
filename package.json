@@ -18,6 +18,7 @@
   "devDependencies": {
     "@playwright/test": "^1.48.0",
     "@types/node": "^22.5.5",
-    "allure-playwright": "^3.0.5"
+    "allure-playwright": "^3.0.5",
+    "nyc": "^17.1.0"
   }
 }
