@@ -15,9 +15,7 @@ This repository contains automated test scripts built using Playwright. The test
 ## Status Badges
 
 ![Build Status](https://github.com/OmarovIV/QA-Automation-Scripts/actions/workflows/playwright.yml/badge.svg)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/OmarovIV/QA-Automation-Scripts/Playwright%20Tests)
-![GitHub License](https://img.shields.io/github/license/OmarovIV/QA-Automation-Scripts)
-![GitHub language count](https://img.shields.io/github/languages/count/OmarovIV/QA-Automation-Scripts)
+![Languages](https://img.shields.io/github/languages/count/OmarovIV/QA-Automation-Scripts)
 
 ## Table of Contents
 
