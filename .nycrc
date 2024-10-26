@@ -1,0 +1,7 @@
+{
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "include": ["tests/**/*.ts"],
+  "exclude": ["node_modules", "playwright-report"],
+  "reporter": ["text", "html"],
+  "all": true
+}
